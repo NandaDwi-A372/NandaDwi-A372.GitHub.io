@@ -3,356 +3,1805 @@
 <head>
 <meta charset="UTF-8">
 <meta name="viewport" content="width=device-width, initial-scale=1.0">
-<title>CV Nanda</title>
+<title>Website Resmi Desa Watumalang - Wonosobo</title>
+
+<!-- Bootstrap 5 -->
+<link href="https://cdn.jsdelivr.net/npm/bootstrap@5.3.3/dist/css/bootstrap.min.css" rel="stylesheet">
+<!-- Bootstrap Icons -->
+<link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/bootstrap-icons@1.11.3/font/bootstrap-icons.min.css">
+<!-- Font Awesome -->
+<link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.5.1/css/all.min.css">
+<!-- Google Fonts -->
+<link href="https://fonts.googleapis.com/css2?family=Poppins:wght@300;400;500;600;700;800&family=Playfair+Display:wght@400;700&display=swap" rel="stylesheet">
+<!-- AOS Animation -->
+<link href="https://unpkg.com/aos@2.3.1/dist/aos.css" rel="stylesheet">
+<!-- Chart JS -->
+<script src="https://cdn.jsdelivr.net/npm/chart.js"></script>
 
 <style>
-/* 🌸 BACKGROUND GIRLY */
+/* =========================
+   GLOBAL STYLES
+========================= */
+* {
+  margin: 0;
+  padding: 0;
+  box-sizing: border-box;
+}
+
 body {
-    margin: 0;
-    font-family: 'Poppins', sans-serif;
-    background: linear-gradient(135deg, #ff9a9e, #fad0c4, #fbc2eb, #a6c1ee);
-    background-size: 400% 400%;
-    animation: gradientMove 10s ease infinite;
-    color: #333;
-    display: flex;
-    justify-content: center;
-}
-@keyframes gradientMove {
-    0% {background-position: 0%}
-    50% {background-position: 100%}
-    100% {background-position: 0%}
-}
-
-/* 📦 CONTAINER UTAMA */
-.main-container {
-    width: 100%;
-    max-width: 1000px;
-    margin: 40px;
-    padding: 20px;
-    border-radius: 30px;
-    background: rgba(255, 255, 255, 0.35);
-    backdrop-filter: blur(20px);
-    box-shadow: 0 20px 60px rgba(255, 105, 180, 0.4);
-}
-
-/* 🌟 NAVBAR */
-nav {
-    position: sticky;
-    top: 0;
-    backdrop-filter: blur(12px);
-    background: rgba(255,255,255,0.3);
-    padding: 15px;
-    text-align: center;
-    z-index: 100;
-    border-radius: 20px;
-}
-nav a {
-    margin: 0 15px;
-    text-decoration: none;
-    color: #ff4d88;
-    font-weight: bold;
-    transition: 0.3s;
-}
-nav a:hover {
-    color: #d63384;
-}
-
-/* 👤 HEADER */
-header {
-    text-align: center;
-    padding: 60px 20px;
-}
-
-/* 💖 FOTO PROFIL */
-.profile-container {
-    width: 170px;
-    height: 170px;
-    margin: auto;
-    border-radius: 50%;
-    padding: 5px;
-    background: linear-gradient(135deg, #ff4d88, #ff99cc, #a6c1ee);
-    box-shadow: 0 10px 30px rgba(255,105,180,0.6);
-    transition: 0.4s;
-}
-.profile-container:hover {
-    transform: scale(1.08);
-    box-shadow: 0 20px 50px rgba(255,105,180,0.9);
-}
-.profile-container img {
-    width: 100%;
-    height: 100%;
-    border-radius: 50%;
-    object-fit: cover;
-}
-header h1 {
-    margin-top: 15px;
-    color: #d63384;
-}
-header p {
-    color: #555;
-}
-
-/* 💎 CARD */
-section {
-    max-width: 900px;
-    margin: 30px auto;
-    padding: 25px;
-    background: rgba(255,255,255,0.5);
-    backdrop-filter: blur(15px);
-    border-radius: 25px;
-    box-shadow: 0 15px 40px rgba(255,105,180,0.3);
-    transition: 0.4s;
-}
-section:hover {
-    transform: translateY(-10px) scale(1.02);
-    box-shadow: 0 25px 60px rgba(255,105,180,0.5);
-}
-
-/* 🎀 JUDUL */
-h2 {
-    border-bottom: 2px solid #ff69b4;
-    padding-bottom: 5px;
-    color: #d63384;
-}
-
-/* 💻 SKILLS BOX */
-.skills {
-    display: flex;
-    flex-wrap: wrap;
-    gap: 30px;
-    justify-content: center;
-}
-.skill-box {
-    flex: 1;
-    min-width: 250px;
-    background: rgba(255,255,255,0.6);
-    backdrop-filter: blur(15px);
-    padding: 20px;
-    border-radius: 20px;
-    box-shadow: 0 10px 30px rgba(255,105,180,0.3);
-    transition: transform 0.3s, box-shadow 0.3s;
-}
-.skill-box:hover {
-    transform: translateY(-5px);
-    box-shadow: 0 15px 40px rgba(255,105,180,0.5);
-}
-.skill-box h3 {
-    color: #d63384;
-    margin-bottom: 15px;
-    text-align: center;
-}
-
-/* 💌 LINK */
-a {
-    color: #ff4d88;
-    text-decoration: none;
-}
-a:hover {
-    text-decoration: underline;
-}
-
-/* 🍓 FOOTER */
-footer {
-    text-align: center;
-    padding: 20px;
-    color: #d63384;
-}
-
-/* 🎬 ANIMASI */
-.hidden {
-    opacity: 0;
-    transform: translateY(40px);
-    transition: 0.7s;
-}
-.show {
-    opacity: 1;
-    transform: translateY(0);
-}
-
-/* 📸 PORTOFOLIO */
-.portfolio {
-    display: flex;
-    flex-wrap: wrap;
-    gap: 20px;
-    justify-content: center;
-}
-.portfolio-item {
-    background: rgba(255,255,255,0.6);
-    padding: 15px;
-    border-radius: 20px;
-    text-align: center;
-    box-shadow: 0 10px 30px rgba(255,105,180,0.3);
-    transition: transform 0.3s, box-shadow 0.3s;
-    width: 250px;
-}
-.portfolio-item:hover {
-    transform: translateY(-5px);
-    box-shadow: 0 15px 40px rgba(255,105,180,0.5);
-}
-.portfolio-item img {
-    width: 100%;
-    height: 150px;
-    object-fit: cover;
-    border-radius: 15px;
-    margin-bottom: 10px;
-    transition: 0.3s;
-}
-.portfolio-item img:hover {
-    transform: scale(1.05);
-}
-
-/* RESPONSIVE */
-@media(max-width:768px){
-    .skills, .portfolio {
-        flex-direction: column;
-        align-items: center;
-    }
-    nav a {
-        display: block;
-        margin: 10px 0;
-    }
+  font-family: 'Poppins', sans-serif;
+  background: linear-gradient(135deg, #f5f7fa 0%, #c3cfe2 100%);
+  overflow-x: hidden;
 }
 
 html {
-    scroll-behavior: smooth;
+  scroll-behavior: smooth;
+}
+
+/* =========================
+   ANIMATED BACKGROUND
+========================= */
+.bg-animation {
+  position: fixed;
+  top: 0;
+  left: 0;
+  width: 100%;
+  height: 100%;
+  z-index: -1;
+  overflow: hidden;
+}
+
+.bg-animation::before {
+  content: '';
+  position: absolute;
+  width: 200px;
+  height: 200px;
+  background: rgba(106, 17, 203, 0.03);
+  border-radius: 50%;
+  animation: float 20s infinite linear;
+}
+
+.bg-animation::after {
+  content: '';
+  position: absolute;
+  width: 150px;
+  height: 150px;
+  background: rgba(37, 117, 252, 0.03);
+  border-radius: 50%;
+  animation: float 25s infinite linear reverse;
+  top: 80%;
+  left: 20%;
+}
+
+@keyframes float {
+  0% { transform: translateY(0px) rotate(0deg); }
+  50% { transform: translateY(-20px) rotate(180deg); }
+  100% { transform: translateY(0px) rotate(360deg); }
+}
+
+/* =========================
+   TOPBAR
+========================= */
+.topbar {
+  position: fixed;
+  top: 0;
+  width: 100%;
+  z-index: 9999;
+  background: rgba(255, 255, 255, 0.95);
+  backdrop-filter: blur(20px);
+  border-bottom: 1px solid rgba(255, 255, 255, 0.3);
+  box-shadow: 0 8px 32px rgba(0, 0, 0, 0.1);
+  padding: 12px 0;
+  transition: all 0.3s ease;
+}
+
+.logo-box {
+  display: flex;
+  align-items: center;
+  gap: 15px;
+}
+
+.logo-box img {
+  width: 50px;
+  height: 50px;
+  border-radius: 15px;
+  box-shadow: 0 8px 25px rgba(106, 17, 203, 0.3);
+  transition: all 0.3s ease;
+}
+
+.logo-box:hover img {
+  transform: scale(1.05) rotate(5deg);
+}
+
+.logo-text h5 {
+  margin: 0;
+  font-size: 20px;
+  font-weight: 800;
+  background: linear-gradient(135deg, #6a11cb, #2575fc);
+  -webkit-background-clip: text;
+  -webkit-text-fill-color: transparent;
+  background-clip: text;
+}
+
+.logo-text small {
+  color: #6c757d;
+  font-size: 13px;
+  font-weight: 500;
+}
+
+/* =========================
+   SEARCH BAR
+========================= */
+.search-box {
+  position: relative;
+  max-width: 350px;
+  margin: 0 auto;
+}
+
+.search-box input {
+  border: none;
+  border-radius: 50px;
+  background: linear-gradient(145deg, #f8f9ff, #e8ecff);
+  padding: 14px 20px 14px 50px;
+  box-shadow: 0 8px 25px rgba(0, 0, 0, 0.08);
+  transition: all 0.3s ease;
+  font-size: 14px;
+}
+
+.search-box input:focus {
+  background: white;
+  box-shadow: 0 15px 40px rgba(106, 17, 203, 0.25);
+  transform: translateY(-2px);
+}
+
+.search-box i {
+  position: absolute;
+  top: 16px;
+  left: 20px;
+  color: #6a11cb;
+  font-size: 16px;
+  transition: 0.3s;
+}
+
+/* =========================
+   ICON BUTTONS
+========================= */
+.icon-btn {
+  width: 48px;
+  height: 48px;
+  border: none;
+  border-radius: 15px;
+  margin-left: 10px;
+  background: linear-gradient(135deg, #6a11cb, #2575fc);
+  color: white;
+  font-size: 18px;
+  box-shadow: 0 8px 25px rgba(106, 17, 203, 0.4);
+  transition: all 0.3s cubic-bezier(0.4, 0, 0.2, 1);
+}
+
+.icon-btn:hover {
+  transform: translateY(-5px) scale(1.05);
+  box-shadow: 0 20px 40px rgba(106, 17, 203, 0.5);
+}
+
+/* =========================
+   HERO SECTION
+========================= */
+.hero {
+  margin-top: 80px;
+  min-height: 100vh;
+  background: linear-gradient(135deg, rgba(106, 17, 203, 0.95), rgba(37, 117, 252, 0.9)),
+              url('background.jpeg');
+  background-size: cover;
+  background-position: center;
+  background-attachment: fixed;
+  display: flex;
+  align-items: center;
+  position: relative;
+  overflow: hidden;
+}
+
+.hero::before {
+  content: '';
+  position: absolute;
+  width: 600px;
+  height: 600px;
+  background: rgba(255, 255, 255, 0.1);
+  border-radius: 50%;
+  top: -300px;
+  right: -300px;
+  animation: pulse 8s infinite;
+}
+
+@keyframes pulse {
+  0%, 100% { transform: scale(1); opacity: 0.5; }
+  50% { transform: scale(1.1); opacity: 0.2; }
+}
+
+.hero-content {
+  position: relative;
+  z-index: 2;
+}
+
+.hero-card {
+  .hero-logo{
+  margin-bottom:25px;
+}
+
+.hero-logo img{
+  width:110px;
+  height:auto;
+  filter: drop-shadow(0 8px 20px rgba(0,0,0,0.35));
+  transition:0.3s;
+}
+
+.hero-logo img:hover{
+  transform:scale(1.08);
+}
+  max-width: 700px;
+  padding: 50px 60px;
+  border-radius: 35px;
+  background: rgba(255, 255, 255, 0.18);
+  backdrop-filter: blur(30px);
+  border: 1px solid rgba(255, 255, 255, 0.4);
+  color: white;
+  box-shadow: 0 30px 70px rgba(0, 0, 0, 0.3);
+  animation: slideInUp 1s ease;
+}
+
+@keyframes slideInUp {
+  from {
+    opacity: 0;
+    transform: translateY(50px);
+  }
+  to {
+    opacity: 1;
+    transform: translateY(0);
+  }
+}
+
+.badge-desa {
+  display: inline-block;
+  padding: 12px 30px;
+  border-radius: 50px;
+  background: linear-gradient(135deg, rgba(255, 255, 255, 0.35), rgba(255, 255, 255, 0.15));
+  font-size: 13px;
+  font-weight: 700;
+  letter-spacing: 2px;
+  box-shadow: 0 10px 25px rgba(0, 0, 0, 0.15);
+  margin-bottom: 25px;
+}
+
+.hero h1 {
+  font-size: 52px;
+  font-weight: 800;
+  line-height: 1.1;
+  margin-bottom: 25px;
+  text-shadow: 0 5px 25px rgba(0, 0, 0, 0.4);
+}
+
+.hero p {
+  font-size: 19px;
+  line-height: 1.7;
+  margin-bottom: 35px;
+  opacity: 0.95;
+}
+
+.hero-btn .btn {
+  padding: 18px 40px;
+  border-radius: 50px;
+  font-size: 17px;
+  font-weight: 700;
+  margin-right: 20px;
+  transition: all 0.3s ease;
+  box-shadow: 0 12px 35px rgba(0, 0, 0, 0.25);
+}
+
+.hero-btn .btn:hover {
+  transform: translateY(-4px);
+  box-shadow: 0 25px 50px rgba(0, 0, 0, 0.35);
+}
+
+/* =========================
+   NAVBAR
+========================= */
+.menu-bar {
+  background: rgba(255, 255, 255, 0.97);
+  backdrop-filter: blur(25px);
+  box-shadow: 0 12px 45px rgba(0, 0, 0, 0.12);
+  margin-top: 25px;
+  border-radius: 30px;
+  padding: 0 25px;
+  margin: 25px 20px;
+}
+
+.menu-bar .nav-link {
+  color: #333 !important;
+  font-weight: 700;
+  padding: 22px 30px !important;
+  font-size: 16px;
+  position: relative;
+  transition: all 0.3s ease;
+}
+
+.menu-bar .nav-link:hover {
+  color: #6a11cb !important;
+  transform: translateY(-3px);
+}
+
+.menu-bar .nav-link::after {
+  content: '';
+  position: absolute;
+  left: 50%;
+  bottom: 12px;
+  width: 0;
+  height: 4px;
+  background: linear-gradient(135deg, #6a11cb, #2575fc);
+  transition: all 0.3s ease;
+  transform: translateX(-50%);
+  border-radius: 2px;
+}
+
+.menu-bar .nav-link:hover::after {
+  width: 90%;
+}
+
+/* =========================
+   INFO BAR
+========================= */
+.info-bar {
+  background: linear-gradient(135deg, #6a11cb, #2575fc);
+  color: white;
+  margin: 25px 20px;
+  padding: 30px 40px;
+  border-radius: 30px;
+  box-shadow: 0 20px 50px rgba(106, 17, 203, 0.35);
+  font-weight: 600;
+  position: relative;
+  overflow: hidden;
+}
+
+.info-bar::before {
+  content: '';
+  position: absolute;
+  top: 0;
+  left: 0;
+  width: 100%;
+  height: 6px;
+  background: linear-gradient(90deg, #fff, rgba(255,255,255,0.6), #fff);
+  animation: shine 3s infinite;
+}
+
+@keyframes shine {
+  0% { transform: translateX(-100%); }
+  100% { transform: translateX(100%); }
+}
+
+/* =========================
+   MODAL SEJARAH
+========================= */
+.modal-content {
+  border-radius: 25px;
+  border: none;
+  box-shadow: 0 30px 80px rgba(0, 0, 0, 0.3);
+  background: linear-gradient(145deg, #ffffff, #f8f9ff);
+}
+
+.modal-header {
+  border-bottom: 1px solid rgba(0,0,0,0.05);
+  padding-bottom: 20px;
+}
+
+.modal-title {
+  font-weight: 800;
+  background: linear-gradient(135deg, #6a11cb, #2575fc);
+  -webkit-background-clip: text;
+  -webkit-text-fill-color: transparent;
+  background-clip: text;
+}
+
+.sejarah-content {
+  font-size: 16px;
+  line-height: 1.8;
+  color: #444;
+  max-height: 60vh;
+  overflow-y: auto;
+  padding-right: 20px;
+}
+
+.sejarah-content h5 {
+  color: #6a11cb;
+  font-weight: 700;
+  margin-top: 25px;
+  margin-bottom: 15px;
+}
+
+.sejarah-content p {
+  margin-bottom: 18px;
+}
+
+/* =========================
+   SECTION TITLES
+========================= */
+section {
+  padding: 140px 0;
+}
+
+.section-title {
+  text-align: center;
+  font-size: 55px;
+  font-weight: 800;
+  margin-bottom: 90px;
+  color: #2d3436;
+  position: relative;
+  font-family: 'Playfair Display', serif;
+}
+
+.section-title::after {
+  content: '';
+  width: 140px;
+  height: 7px;
+  background: linear-gradient(135deg, #6a11cb, #2575fc);
+  position: absolute;
+  bottom: -25px;
+  left: 50%;
+  transform: translateX(-50%);
+  border-radius: 12px;
+  box-shadow: 0 6px 20px rgba(106, 17, 203, 0.4);
+}
+
+.section-subtitle {
+  font-size: 19px;
+  color: #6c757d;
+  font-weight: 400;
+  margin-top: 20px;
+  max-width: 650px;
+  margin-left: auto;
+  margin-right: auto;
+}
+
+/* =========================
+   PROFIL CARDS
+========================= */
+.profil-card {
+  background: white;
+  border-radius: 35px;
+  padding: 60px;
+  box-shadow: 0 25px 70px rgba(0, 0, 0, 0.12);
+  position: relative;
+  overflow: hidden;
+  border: 1px solid rgba(255, 255, 255, 0.6);
+}
+
+.profil-card::before {
+  content: '';
+  position: absolute;
+  width: 350px;
+  height: 350px;
+  background: linear-gradient(135deg, rgba(106, 17, 203, 0.1), rgba(37, 117, 252, 0.1));
+  border-radius: 50%;
+  top: -150px;
+  right: -150px;
+}
+
+.profil-item {
+  background: linear-gradient(145deg, #f8f9ff, #e8ecff);
+  border-left: 7px solid #6a11cb;
+  padding: 35px;
+  border-radius: 25px;
+  margin-bottom: 30px;
+  transition: all 0.4s cubic-bezier(0.4, 0, 0.2, 1);
+  position: relative;
+  overflow: hidden;
+}
+
+.profil-item::before {
+  content: '';
+  position: absolute;
+  top: 0;
+  left: 0;
+  width: 100%;
+  height: 5px;
+  background: linear-gradient(90deg, #6a11cb, #2575fc);
+}
+
+.profil-item:hover {
+  transform: translateY(-12px) scale(1.03);
+  box-shadow: 0 30px 60px rgba(0, 0, 0, 0.18);
+}
+
+.profil-item h4 {
+  font-size: 26px;
+  margin-bottom: 18px;
+  color: #6a11cb;
+  font-weight: 800;
+}
+
+/* =========================
+   GOVERNMENT CARDS - MARQUEE ANIMATION
+========================= */
+.gov-container {
+  overflow: hidden;
+  position: relative;
+  padding: 20px 0;
+}
+
+.gov-marquee {
+  display: flex;
+  animation: scrollLeft 40s linear infinite;
+  gap: 30px;
+}
+
+.gov-marquee:hover {
+  animation-play-state: paused;
+}
+
+@keyframes scrollLeft {
+  0% { transform: translateX(0); }
+  100% { transform: translateX(-50%); }
+}
+
+.gov-card {
+  background: linear-gradient(145deg, #ffffff, #f8f9ff);
+  border-radius: 30px;
+  padding: 40px 30px 30px;
+  text-align: center;
+  box-shadow: 0 20px 50px rgba(0, 0, 0, 0.1);
+  position: relative;
+  overflow: hidden;
+  transition: all 0.4s ease;
+  border: 1px solid rgba(255, 255, 255, 0.6);
+  min-width: 280px;
+  flex-shrink: 0;
+}
+
+.gov-card::before {
+  content: '';
+  position: absolute;
+  width: 100%;
+  height: 160px;
+  background: linear-gradient(135deg, #6a11cb, #2575fc);
+  top: 0;
+  left: 0;
+  z-index: 1;
+  border-radius: 25px 25px 0 0;
+}
+
+.gov-card:hover {
+  transform: translateY(-20px) scale(1.05);
+  box-shadow: 0 40px 80px rgba(0, 0, 0, 0.25);
+}
+
+.gov-card img {
+  width: 140px;
+  height: 140px;
+  object-fit: cover;
+  border-radius: 50%;
+  border: 7px solid white;
+  position: relative;
+  z-index: 2;
+  margin-top: 60px;
+  box-shadow: 0 20px 50px rgba(0, 0, 0, 0.25);
+  transition: all 0.4s ease;
+}
+
+.gov-card:hover img {
+  transform: scale(1.15) rotate(5deg);
+}
+
+.gov-card h5 {
+  margin-top: 25px;
+  font-weight: 800;
+  color: #222;
+  position: relative;
+  z-index: 2;
+  font-size: 20px;
+}
+
+.gov-card p {
+  color: #666;
+  margin: 0;
+  position: relative;
+  z-index: 2;
+  font-weight: 600;
+  font-size: 15px;
+}
+
+/* =========================
+   STATISTIC CARDS
+========================= */
+.stat-card {
+  background: linear-gradient(145deg, #ffffff, #f8f9ff);
+  border-radius: 30px;
+  padding: 40px 30px;
+  text-align: center;
+  box-shadow: 0 20px 50px rgba(0, 0, 0, 0.1);
+  transition: all 0.4s ease;
+  border: 1px solid rgba(255, 255, 255, 0.6);
+  position: relative;
+  overflow: hidden;
+}
+
+.stat-card::before {
+  content: '';
+  position: absolute;
+  top: -50%;
+  left: -50%;
+  width: 200%;
+  height: 200%;
+  background: linear-gradient(45deg, transparent, rgba(106, 17, 203, 0.04), transparent);
+  transform: rotate(45deg);
+  transition: all 0.6s;
+}
+
+.stat-card:hover::before {
+  animation: shineEffect 1s ease;
+}
+
+@keyframes shineEffect {
+  0% { transform: translateX(-100%) translateY(-100%) rotate(45deg); }
+  100% { transform: translateX(100%) translateY(100%) rotate(45deg); }
+}
+
+.stat-card:hover {
+  transform: translateY(-12px);
+  box-shadow: 0 30px 60px rgba(106, 17, 203, 0.25);
+}
+
+.stat-card h3 {
+  font-size: 48px;
+  font-weight: 800;
+  background: linear-gradient(135deg, #6a11cb, #2575fc);
+  -webkit-background-clip: text;
+  -webkit-text-fill-color: transparent;
+  background-clip: text;
+  margin-bottom: 12px;
+}
+
+.stat-card p {
+  margin: 0;
+  color: #6c757d;
+  font-weight: 700;
+  font-size: 17px;
+}
+
+/* =========================
+   CHART CARDS
+========================= */
+.chart-card {
+  background: white;
+  border-radius: 30px;
+  padding: 30px;
+  box-shadow: 0 25px 70px rgba(0, 0, 0, 0.12);
+  border: 1px solid rgba(255, 255, 255, 0.6);
+  height: auto;
+  min-height: unset;
+}
+.chart-card canvas {
+  max-height: 250px !important;
+  width: 100% !important;
+}
+
+/* =========================
+   UMKM CARDS
+========================= */
+.umkm-card {
+  display: flex;
+  gap: 35px;
+  background: white;
+  border-radius: 35px;
+  overflow: hidden;
+  box-shadow: 0 25px 70px rgba(0, 0, 0, 0.12);
+  margin-bottom: 45px;
+  transition: all 0.4s ease;
+  border: 1px solid rgba(255, 255, 255, 0.6);
+}
+
+.umkm-card:hover {
+  transform: translateY(-12px);
+  box-shadow: 0 40px 90px rgba(0, 0, 0, 0.25);
+}
+
+.umkm-card img {
+  width: 400px;
+  height: 100%;
+  object-fit: cover;
+  transition: transform 0.4s ease;
+}
+
+.umkm-card:hover img {
+  transform: scale(1.08);
+}
+
+.umkm-content {
+  padding: 45px;
+  flex: 1;
+}
+
+.umkm-content h4 {
+  font-weight: 800;
+  margin-bottom: 25px;
+  color: #6a11cb;
+  font-size: 32px;
+}
+
+.umkm-content p {
+  color: #666;
+  line-height: 1.8;
+  margin-bottom: 25px;
+  font-size: 17px;
+}
+
+.location-tag {
+  display: inline-flex;
+  align-items: center;
+  gap: 12px;
+  background: linear-gradient(135deg, #6a11cb, #2575fc);
+  color: white;
+  padding: 12px 25px;
+  border-radius: 30px;
+  font-weight: 700;
+  font-size: 15px;
+}
+
+/* =========================
+   GALLERY CARDS
+========================= */
+.gallery-card {
+  background: white;
+  border-radius: 30px;
+  overflow: hidden;
+  box-shadow: 0 20px 50px rgba(0, 0, 0, 0.1);
+  transition: all 0.4s ease;
+  border: 1px solid rgba(255, 255, 255, 0.6);
+  position: relative;
+}
+
+.gallery-card::before {
+  content: '';
+  position: absolute;
+  top: 0;
+  left: 0;
+  right: 0;
+  bottom: 0;
+  background: linear-gradient(135deg, rgba(106, 17, 203, 0.12), rgba(37, 117, 252, 0.12));
+  opacity: 0;
+  transition: opacity 0.3s ease;
+  z-index: 1;
+}
+
+.gallery-card:hover::before {
+  opacity: 1;
+}
+
+.gallery-card:hover {
+  transform: translateY(-20px) scale(1.03);
+  box-shadow: 0 40px 90px rgba(0, 0, 0, 0.3);
+}
+
+.gallery-card img {
+  width: 100%;
+  height: 320px;
+  object-fit: cover;
+  transition: transform 0.4s ease;
+}
+
+.gallery-card:hover img {
+  transform: scale(1.12);
+}
+
+.gallery-content {
+  padding: 35px;
+  position: relative;
+  z-index: 2;
+}
+
+.gallery-content h5 {
+  font-weight: 800;
+  color: #222;
+  margin-bottom: 12px;
+  font-size: 24px;
+}
+
+/* =========================
+   MAP CARD
+========================= */
+.map-card {
+  background: white;
+  border-radius: 35px;
+  padding: 45px;
+  box-shadow: 0 25px 70px rgba(0, 0, 0, 0.12);
+  border: 1px solid rgba(255, 255, 255, 0.6);
+  overflow: hidden;
+}
+
+.map-card iframe {
+  border-radius: 30px;
+  box-shadow: 0 20px 50px rgba(0, 0, 0, 0.2);
+  width: 100% !important;
+  height: 500px !important;
+  border: none;
+}
+
+/* =========================
+   CONTACT FORM
+========================= */
+.contact-info {
+  background: linear-gradient(145deg, #f8f9ff, #e8ecff);
+  padding: 45px;
+  border-radius: 30px;
+  box-shadow: 0 20px 50px rgba(0, 0, 0, 0.1);
+  border-left: 7px solid #6a11cb;
+}
+
+.form-card {
+  background: white;
+  padding: 55px;
+  border-radius: 30px;
+  box-shadow: 0 25px 70px rgba(0, 0, 0, 0.12);
+  border: 1px solid rgba(255, 255, 255, 0.6);
+}
+
+.form-control {
+  border: none;
+  border-radius: 25px;
+  background: linear-gradient(145deg, #f8f9ff, #e8ecff);
+  padding: 20px 30px;
+  font-size: 17px;
+  transition: all 0.3s ease;
+  box-shadow: 0 10px 30px rgba(0, 0, 0, 0.1);
+}
+
+.form-control:focus {
+  background: white;
+  box-shadow: 0 20px 50px rgba(106, 17, 203, 0.25);
+  transform: translateY(-3px);
+  border-color: transparent;
+}
+
+.btn-primary {
+  background: linear-gradient(135deg, #6a11cb, #2575fc);
+  border: none;
+  padding: 20px;
+  border-radius: 25px;
+  font-weight: 800;
+  font-size: 17px;
+  transition: all 0.3s ease;
+  box-shadow: 0 20px 50px rgba(106, 17, 203, 0.45);
+  width: 100%;
+}
+
+.btn-primary:hover {
+  transform: translateY(-4px);
+  box-shadow: 0 30px 60px rgba(106, 17, 203, 0.55);
+}
+
+/* =========================
+   FOOTER
+========================= */
+footer {
+  background: linear-gradient(135deg, #111827, #1f2937);
+  color: white;
+  padding: 90px 0 45px;
+  position: relative;
+  overflow: hidden;
+}
+
+.footer-content {
+  display: grid;
+  grid-template-columns: repeat(auto-fit, minmax(280px, 1fr));
+  gap: 45px;
+  margin-bottom: 45px;
+}
+
+.footer-logo {
+  display: flex;
+  align-items: center;
+  gap: 18px;
+  margin-bottom: 25px;
+}
+
+.footer-logo img {
+  width: 70px;
+  height: 70px;
+  border-radius: 18px;
+}
+
+.footer-title {
+  font-size: 24px;
+  font-weight: 800;
+  margin-bottom: 25px;
+  color: white;
+}
+
+.footer-link {
+  color: #9ca3af;
+  text-decoration: none;
+  display: block;
+  margin-bottom: 15px;
+  transition: all 0.3s ease;
+}
+
+.footer-link:hover {
+  color: #6a11cb;
+  transform: translateX(12px);
+}
+
+.footer-bottom {
+  border-top: 1px solid rgba(255, 255, 255, 0.12);
+  padding-top: 35px;
+  text-align: center;
+  color: #9ca3af;
+}
+
+/* =========================
+   RESPONSIVE
+========================= */
+@media (max-width: 768px) {
+  .hero {
+    min-height: 100vh;
+    text-align: center;
+    background-attachment: scroll;
+    margin-top: 90px;
+  }
+
+  .hero h1 {
+    font-size: 40px;
+  }
+
+  .hero-card {
+    max-width: 100%;
+    padding: 35px 30px;
+    margin: 0 20px;
+  }
+
+  .section-title {
+    font-size: 40px;
+  }
+
+  .umkm-card {
+    flex-direction: column;
+  }
+
+  .umkm-card img {
+    width: 100%;
+    height: 280px;
+  }
+
+  .menu-bar {
+    margin: 15px;
+    border-radius: 25px;
+  }
+
+  .info-bar {
+    margin: 15px;
+    padding: 25px 30px;
+  }
+
+  .gov-marquee {
+    gap: 20px;
+  }
+
+  .gov-card {
+    min-width: 250px;
+  }
+}
+
+@media (max-width: 576px) {
+  .hero h1 {
+    font-size: 32px;
+  }
+  
+  .section-title {
+    font-size: 32px;
+  }
+  
+  .stat-card h3 {
+    font-size: 36px;
+  }
+}
+
+/* =========================
+   LOADING ANIMATION
+========================= */
+.loading {
+  position: fixed;
+  top: 0;
+  left: 0;
+  width: 100%;
+  height: 100%;
+  background: linear-gradient(135deg, #6a11cb, #2575fc);
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  z-index: 10000;
+  transition: opacity 0.5s ease;
+}
+
+.loading.hidden {
+  opacity: 0;
+  pointer-events: none;
+}
+
+.spinner {
+  width: 70px;
+  height: 70px;
+  border: 5px solid rgba(255, 255, 255, 0.3);
+  border-top: 5px solid white;
+  border-radius: 50%;
+  animation: spin 1s linear infinite;
+}
+
+@keyframes spin {
+  0% { transform: rotate(0deg); }
+  100% { transform: rotate(360deg); }
 }
 </style>
 </head>
 <body>
-<div class="main-container">
 
-<!-- 🌟 NAVBAR -->
-<nav>
-    <a href="#tentang">Tentang</a>
-    <a href="#pendidikan">Pendidikan</a>
-    <a href="#organisasi">Organisasi</a>
-    <a href="#prestasi">Prestasi</a>
-    <a href="#kemampuan">Kemampuan</a>
-    <a href="#portofolio">Portofolio</a>
-    <a href="#kontak">Kontak</a>
-</nav>
-
-<!-- 👤 HEADER -->
-<header>
-    <div class="profile-container">
-        <img src="Foto/002988cc-fe83-4b35-9b2f-5c65c83d560b.jpg" alt="Foto Nanda">
-    </div>
-    <h1>Nanda Dwi Al'Insyiroh</h1>
-    <p>Siswa SMK | 💻 Tech Enthusiast | 🌱 Self Development</p>
-</header>
-
-<!-- 💖 TENTANG -->
-<section id="tentang" class="hidden">
-    <h2>Tentang Saya</h2>
-    <p>
-        Saya adalah siswa SMK kelas 10 jurusan PPLG yang memiliki semangat belajar tinggi,minat di bidang teknologi,disiplin,dan bertanggung jawab.
-        Saya mampu bekerja sama dalam tim maupun secara mandiri. Mudah beradaptasi dengan lingkungan baru, memiliki  ketertarikan dalam mengembangkan keterampilan baru serta berko,itmen untuk terus meningkatkan kemampuan diri baik di bidang akademik maupun non-akademik .
-    </p>
-</section>
-
-<!-- 🎓 PENDIDIKAN -->
-<section id="pendidikan" class="hidden">
-    <h2>Pendidikan</h2>
-    <ul>
-        <li>SMK N 1 Bawang - PPLG (2025 - Sekarang)</li>
-        <li>SMP N 1 Pagentan (2022 - 2025)</li>
-        <li>SD N Pancoran 10PG (2016 - 2022)</li>
-    </ul>
-</section>
-
-<!-- 🏆 ORGANISASI -->
-<section id="organisasi" class="hidden">
-    <h2>Pengalaman Organisasi</h2>
-    <ul>
-        <li>Anggota Ekstrakulikuler Tari (2024 - 2025)</li>
-        <li>Anggota PMR (2024)</li>
-    </ul>
-</section>
-
-<!-- 🏅 PRESTASI -->
-<section id="prestasi" class="hidden">
-    <h2>Prestasi</h2>
-    <ul>
-        <li>Belum Ditemukan</li>
-    </ul>
-</section>
-
-<!-- 💻 KEMAMPUAN -->
-<section id="kemampuan" class="hidden">
-    <h2>Kemampuan</h2>
-    <div class="skills">
-        <div class="skill-box">
-            <h3>Softskill</h3>
-            <ul>
-                <li>Kerja Sama Tim</li>
-                <li>Komunikasi</li>
-                <li>Kedisiplinan</li>
-            </ul>
-        </div>
-        <div class="skill-box">
-            <h3>Hardskill</h3>
-            <ul>
-                <li>Microsoft Office</li>
-                <li>Canva</li>
-                <li>Figma</li>
-            </ul>
-        </div>
-    </div>
-</section>
-
-<!-- 🎨 PORTOFOLIO -->
-<section id="portofolio" class="hidden">
-    <h2>Portofolio</h2>
-    <div class="portfolio">
-        <div class="portfolio-item">
-            <img src="Foto/Screenshot 2026-04-01 102612.png" alt="Karya Figma">
-            <h3>Desain UI Figma</h3>
-            <p>Prototype tampilan LogIn sederhana menggunakan Figma.</p>
-            <a href="https://www.figma.com/design/SPP9Lp2x11fk6RX0AACUV9/Untitled?node-id=0-1&p=f&t=8dEWIIDUA1uOcdea-0" target="_blank">🔗 Lihat Karya</a>
-        </div>
-        <div class="portfolio-item">
-            <img src="Foto/Screenshot 2026-04-01 103732.png" alt="Karya Canva">
-            <h3>Desain Packaging Canva</h3>
-            <p>Membuat desain Packaging Makanan menggunakan Canva.</p>
-            <a href="https://canva.link/jiilwhe530hf5gx" target="_blank">🔗 Lihat Karya</a>
-        </div>
-        <div class="portfolio-item">
-            <img src="Foto/Screenshot 2026-04-01 102721.png" alt="Karya Canva">
-            <h3>Desain UI Figma</h3>
-            <p>Prototype tampilan aplikasi Shoope menggunakan Figma.</p>
-            <a href="https://www.figma.com/design/SPP9Lp2x11fk6RX0AACUV9/Untitled?node-id=20-2&p=f&t=8dEWIIDUA1uOcdea-0" target="_blank">🔗 Lihat Karya</a>
-        </div>
-    </div>
-</section>
-
-<!-- 📞 KONTAK -->
-<section id="kontak" class="hidden">
-    <h2>Kontak</h2>
-    <ul>
-        <li>Email: 20372@pplg.smkn1bawang.sch.id</li>
-        <li><a href="https://www.instagram.com/_nddww" target="_blank">Instagram</a></li>
-        <li><a href="https://www.tiktok.com" target="_blank">TikTok</a></li>
-    </ul>
-</section>
-
-<!-- 🍓 FOOTER -->
-<footer>
-    &copy; 2026 Nanda Dwi Al'Insyiroh 💖
-</footer>
+<!-- Loading Screen -->
+<div class="loading" id="loading">
+  <div class="spinner"></div>
 </div>
 
-<!-- 🎬 SCRIPT -->
+<!-- Animated Background -->
+<div class="bg-animation"></div>
+
+<!-- =========================
+     TOPBAR
+========================= -->
+<div class="topbar">
+  <div class="container">
+    <div class="row align-items-center">
+      <div class="col-lg-4 col-md-3">
+        <div class="logo-box">
+          <img src="Logo-Desa.png" alt="Logo Desa">
+          <div class="logo-text">
+            <h5>Desa Watumalang</h5>
+            <small>Kec. Watumalang • Kab. Wonosobo</small>
+          </div>
+        </div>
+      </div>
+      <div class="col-lg-5 col-md-6">
+        <div class="search-box">
+          <i class="bi bi-search"></i>
+          <input type="text" id="searchInput" class="form-control" placeholder="Cari informasi desa...">
+        </div>
+      </div>
+      <div class="col-lg-3 col-md-3 text-end">
+        <button class="icon-btn" title="Beranda">
+          <i class="bi bi-house-door-fill"></i>
+        </button>
+        <button class="icon-btn" title="Statistik">
+          <i class="bi bi-bar-chart-fill"></i>
+        </button>
+        <button class="icon-btn" title="Notifikasi">
+          <i class="bi bi-bell-fill"></i>
+        </button>
+      </div>
+    </div>
+  </div>
+</div>
+
+<!-- =========================
+     HERO SECTION
+========================= -->
+<section class="hero">
+  <div class="container">
+    <div class="hero-content" data-aos="fade-up">
+      <div class="hero-card">
+
+  <div class="hero-logo">
+    <img src="Logo-Desa.png" alt="Logo Desa Watumalang">
+  </div>
+        <span class="badge-desa">🌿 WEBSITE RESMI DESA WATUMALANG</span>
+        <h1>Selamat Datang di Desa Watumalang</h1>
+        <p>
+          Portal informasi desa modern yang menyediakan layanan publik, statistik penduduk terkini, 
+          informasi UMKM lokal, galeri kegiatan desa, dan pengaduan masyarakat yang transparan.
+        </p>
+        <div class="hero-btn">
+          <a href="#profil" class="btn btn-light">
+            <i class="bi bi-compass me-2"></i>Jelajahi Desa
+          </a>
+          <a href="#kontak" class="btn btn-outline-light">
+            <i class="bi bi-chat-dots me-2"></i>Hubungi Kami
+          </a>
+        </div>
+      </div>
+    </div>
+  </div>
+</section>
+
+<!-- =========================
+     NAVBAR
+========================= -->
+<nav class="navbar navbar-expand-lg menu-bar">
+  <div class="container">
+    <button class="navbar-toggler bg-white shadow-sm p-2" type="button" data-bs-toggle="collapse" data-bs-target="#menu">
+      <span class="navbar-toggler-icon"></span>
+    </button>
+    <div class="collapse navbar-collapse" id="menu">
+      <ul class="navbar-nav mx-auto">
+        <li class="nav-item"><a class="nav-link" href="#profil">Profil Desa</a></li>
+        <li class="nav-item"><a class="nav-link" href="#struktur">Pemerintahan</a></li>
+        <li class="nav-item"><a class="nav-link" href="#statistik">Statistik</a></li>
+        <li class="nav-item"><a class="nav-link" href="#umkm">UMKM</a></li>
+        <li class="nav-item"><a class="nav-link" href="#galeri">Galeri</a></li>
+        <li class="nav-item"><a class="nav-link" href="#peta">Peta Desa</a></li>
+        <li class="nav-item"><a class="nav-link" href="#kontak">Kontak</a></li>
+      </ul>
+    </div>
+  </div>
+</nav>
+
+<!-- =========================
+     INFO BAR
+========================= -->
+<div class="container">
+  <div class="info-bar" data-aos="zoom-in">
+    <i class="bi bi-megaphone-fill me-3"></i>
+    📢 Selamat datang di website resmi Desa Watumalang. Portal informasi desa modern, transparan, dan terpercaya untuk warga desa.
+  </div>
+</div>
+
+<!-- =========================
+     PROFIL DESA
+========================= -->
+<section id="profil">
+  <div class="container">
+    <h2 class="section-title" data-aos="fade-down">Profil Desa</h2>
+    <p class="section-subtitle text-center mb-5" data-aos="fade-up">Kenali lebih dekat tentang Desa Watumalang</p>
+    
+    <div class="profil-card" data-aos="fade-up">
+      <div class="row">
+        <div class="col-lg-4 mb-4">
+          <div class="profil-item">
+            <h4><i class="bi bi-book me-3 text-primary"></i>Sejarah Desa</h4>
+            <p>Desa Watumalang memiliki sejarah panjang sebagai sentra pertanian organik dan wisata alam. <a href="#" data-bs-toggle="modal" data-bs-target="#sejarahModal" class="text-decoration-none fw-bold text-primary">Baca Lengkap →</a></p>
+          </div>
+        </div>
+        <div class="col-lg-4 mb-4">
+          <div class="profil-item">
+            <h4><i class="bi bi-eye me-3 text-primary"></i>Visi Desa</h4>
+            <p><strong>"Menjadi desa yang maju, mandiri, modern, dan sejahtera."</strong> Menuju kemandirian ekonomi dan kesejahteraan masyarakat.</p>
+          </div>
+        </div>
+        <div class="col-lg-4 mb-4">
+          <div class="profil-item">
+            <h4><i class="bi bi-target me-3 text-primary"></i>Misi Desa</h4>
+            <ul class="mt-3 mb-0">
+              <li>✅ Meningkatkan pelayanan publik</li>
+              <li>✅ Mengembangkan UMKM lokal</li>
+              <li>✅ Meningkatkan kualitas pendidikan</li>
+              <li>✅ Menjaga budaya & lingkungan</li>
+            </ul>
+          </div>
+        </div>
+      </div>
+    </div>
+  </div>
+</section>
+
+<!-- Sejarah Modal -->
+<div class="modal fade" id="sejarahModal" tabindex="-1">
+  <div class="modal-dialog modal-lg modal-dialog-scrollable">
+    <div class="modal-content">
+      <div class="modal-header">
+        <h5 class="modal-title">📚 Sejarah Lengkap Desa Watumalang</h5>
+        <button type="button" class="btn-close" data-bs-dismiss="modal"></button>
+      </div>
+      <div class="modal-body sejarah-content">
+        <h5>🌱 Asal Usul Pembentukan </h5>
+        <p>1. Asal Usul Pembentukan Desa
+
+Asal mulanya berdirinya Desa Watumalang berdasarkan cerita turun temurun  dari nenek moyang yaitu pada tahun 1800-an terdapat  seorang Tokoh masyarakat  yang  bernama Ki Malanggati.  Ki Malanggati adalah salah satu orang  yang dikenal sebagai Sembunggani awal mula berdirinya desa Watumalang, pada  masa itu Ki Malanggati mendirikan sebuah padepokan/dukuh sebagai tanda adanya perkumpulan atau gabungan beberapa keluarga dalam satu wilayah yang pada waktu itu dikenal dengan sebutan padepokan Malang yang berasal dari nama Malanggati.
+
+Seiring waktu berjalan sekitar tahun 1900-an Belanda masuk ke wilayah tersebut dengan tujuan berdagang namun di sisi lain belanda ingin menguasai daerah Malang karena kekayaan alam yang ada di daerah Malang sangat berlimpah terutama kopi, karena sebagian wilayah telah terjajah oleh Belanda maka suatu ketika orang belanda menemukan sebuah batu  yang membujur di sungai tulis kemudian orang Belanda tersebut merubah nama Malang Menjadi Watuhumalang yang berasal dari watuhu dan malang. Watuhu  yang artinya batu yang membujur disungai tulis  dan Malang yang artinya berasal dari nama padepokan waktu itu yang di dirikan oleh Ki Malanggati. Kemudian nama Watuhumalang dijadikan sebagai identitas dan juga sebagai tempat perlindungan bagi kaum Belanda maka Watuhumalang dijadikan sebagai Ibu Kota Kecamatan yang membawahi wilayah barat Wonosobo sampai Jebeng Plampitan. Setelah menjadi sebuah kecamatan maka nama Watuhumalang di rubah menjadi Watumalang.
+
+Sejarah ini ditulis berdasarkan cerita secara turun temurun, dan salah satu narasumber yang menjadi rujukan penulisan sejarah Desa Watumalang adalah Sekretaris Desa Watumalang periode 1990 – 2017 yaitu Bapak Pujono  yang lahir di Wonosobo pada tanggal 7 April 1959.</p>
+        
+        <h5>📜 Pemimpin Desa</h5>
+        <p>a. KARTASENTANA Periode : 1910 – 1940
+
+Bapak Kartasentana adalah Lurah/Glondong yang memimpin pada tahun 1910 sampai tahun 1940 yang pada waktu itu masih dipegang oleh pemerintah Hindia Belanda, desa Watumalang sebagai daerah perkebunan kopi karena pada waktu itu pasenggrahan digunakan sebagai Kantor desa dan juga sebagai gudang kopi.
+
+b. PARTOSUMPENO Periode : 1942 – 1965
+
+Bapak Partosumpeno merupakan Lurah kedua yang juga merupakan menantu dari Kartasentana, Partosumpeno memimpin dari tahun 1942 sampai dengan 1965. Pada masa pemerintahan yang dipimpin oleh Lurah Partosumpeno membentuk sebuah koperasi yang benama Tri Mulyo yang menandakan bahwa pemerintahan pada waktu itu sudah baik, namun pada tahun 1965 terjadi situasi politik yang labil sehingga Partosumpeno diberhentikan dari jabatannya yang kemudian diganti oleh karteker dari TNI.
+
+c. WASIR Periode : 1967 – 1977
+
+Bapak Wasir merupakan seorang yang berasal dari Karteker dari TNI yang memimpin mulai dari tahun 1967 sampai dengan 1977. Karena situasi desa yang tidak menentu maka untuk menjaga keamanan dan ketertiban ditunjuklah seorang Karteker dari TNI.
+
+d. SUYITNO Periode : 1977 - 1980
+
+Karteker  TNI yang kedua ini memimpin Watumalang periode 1977 sampai dengan 1980 dengan tujuan untuk menyetabilkan kondisi dan situasi desa yang darurat dan belum stabil.
+
+e. SUMARTONO Periode : 1982 – 1990
+
+Bapak Sumartono merupakan salah satu kepala desa pertama yang memimpin Watumalang, pada masa itu desa Watumalang sudah mulai tertata dengan baik hal ini dibuktikan dengan adanya rintisan jalan mulai pembukaan jalan baru maupun memperbaiki jalan-jalan yang sudah ada dengan cara bergotong royong. Selain dalam bidang infrastuktur pemerintahan pun berjalan dengan baik hal ini ditandai dengan berlakunya Undang – undang No. 5 Tahun 1979 Tentang Pemerintahan Desa.
+
+f. SUMANTONO Periode : 1990 – 1998
+
+Kepala desa yang kedua ini melanjutkan program pemerintahan dari kepala desa yang pertama yaitu meliputi pembangunan jalan dan juga pembangunan jembatan.
+
+g. SUMARTONO Periode : 1998 – 2006
+
+Pada periode ini pemerintahan Watumalang kembali dipimpin oleh Bapak Sumartono yaitu Kepala Desa Pertama yang berada di Watumalang, dengan terpilihnya kembali Sumartono sebagai kepala desa maka Watumalang semakin stabil dan program-program yang dirintis sejak menjabat pertama dilanjukan.
+
+h. SUGINO Periode : 2006 – 2012
+
+Bapak Sugino adalah Kepala desa ke empat di Watumalang dan juga sebagai Kepala Desa yang berumur termuda yang menjabat Kepala Desa di Watumalang, Bapak Sugino yang sebelumnya adalah ketua BPD  dijadikan modal untuk memimpin pemerintahan di Desa Watumalang yaitu dengan cara musyawarah dan menyerap aspirasi dari masyarakat.
+
+i. BAMBANG USTIYONO Periode : 2013 – 2018 
+
+Bapak Bambang Ustiyono merupakan kepala desa ke lima yang memimpin Desa Watumalang dengan masa periode 2013 sampai dengan 2018 dan berkedudukan di Dusun Watumalang, pemerintahan ini ditandai dengan cara musyawarah dan juga menyerap aspirasi masyarakat dalam menjalankan roda pemerintahannya hal ini diperkuat dengan Undang-undang Nomor 6 tahun 2014 Tentang Desa.
+
+j. JOKO WAHYONO Periode : 2019-2025
+
+Bapak Joko Wahyono merupakan adik kandung dari beliau Bapak Sugino yang menjabat Kepala Desa Watumalang pada Periode 2006-2012. Bapak Joko Wahyono sendiri  merupakan Kepala Desa termuda dalam sejarah Kepala Desa di Desa Watumalang dan pada kepemimpinan beliau akan membawa Desa watumalang ke arah yang lebih baik lagi dari tahun-tahun sebelumnya hal ini diimbangi dengan adanya reorganisasi perangkat desa yang ada di Pemerintahan Desa Watumalang.</p>
+        
+        <h5>🏞️ Potensi Alam & Budaya</h5>
+        <p>Dengan ketinggian 800-1200 mdpl, Watumalang memiliki iklim sejuk dan pemandangan pegunungan yang memukau. Desa ini juga kaya akan tradisi seperti <em>Pawai Batu</em> yang diadakan setiap tahun untuk memperingati legenda asal-usul desa.</p>
+        
+       </div>
+    </div>
+  </div>
+</div>
+
+<!-- =========================
+     STRUKTUR ORGANISASI - MARQUEE
+========================= -->
+<section id="struktur" class="bg-light">
+  <div class="container">
+    <h2 class="section-title" data-aos="fade-down">Pemerintahan Desa</h2>
+    <p class="section-subtitle text-center mb-5" data-aos="fade-up">Struktur organisasi dan aparatur pemerintahan Desa Watumalang</p>
+    
+    <div class="gov-container" data-aos="fade-up">
+      <div class="gov-marquee">
+        <!-- Duplicate cards for seamless loop -->
+        <div class="gov-card">
+          <img src="kepdes.jpg" alt="Kepala Desa">
+          <h5>Joko Wahyono</h5>
+          <p><i class="bi bi-star-fill text-warning me-1"></i>Kepala Desa</p>
+        </div>
+        <div class="gov-card">
+          <img src="sekretaris.jpg" alt="Sekretaris Desa">
+          <h5>Iwan Sutrisno</h5>
+          <p>Sekretaris Desa</p>
+        </div>
+        <div class="gov-card">
+          <img src="perencanaan.jpg" alt="Kaur Perencanaan">
+          <h5>Suroso</h5>
+          <p>Kaur Perencanaan</p>
+        </div>
+        <div class="gov-card">
+          <img src="pemerintahan.jpg" alt="Kasi Pemerintahan">
+          <h5>Slamet Budiarto</h5>
+          <p>Kasi Pemerintahan</p>
+        </div>
+        <div class="gov-card">
+          <img src="kesejahteraan.jpg" alt="Kasi Kesejahteraan">
+          <h5>Turohman</h5>
+          <p>Kasi Kesejahteraan</p>
+        </div>
+        <div class="gov-card">
+          <img src="kuser.png" alt="Kepala Dusun Watumalang">
+          <h5>Purwanto</h5>
+          <p>Kepala Dusun Watumalang</p>
+        </div>
+        <div class="gov-card">
+          <img src="wuser.png" alt="Kepala Dusun Tripis">
+          <h5>Purwanto</h5>
+          <p>Kepala Dusun Tripis</p>
+        </div>
+        <div class="gov-card">
+          <img src="kuser.png" alt="Kaur">
+          <h5>Jumad</h5>
+          <p>Kaur Keuangan</p>
+        </div>
+        <!-- Duplicates for loop -->
+        <div class="gov-card">
+          <img src="kepdes.jpg" alt="Kepala Desa">
+          <h5>Joko Wahyono</h5>
+          <p><i class="bi bi-star-fill text-warning me-1"></i>Kepala Desa</p>
+        </div>
+        <div class="gov-card">
+          <img src="sekretaris.jpg" alt="Sekretaris Desa">
+          <h5>Iwan Sutrisno</h5>
+          <p>Sekretaris Desa</p>
+        </div>
+        <div class="gov-card">
+          <img src="perencanaan.jpg" alt="Kaur Perencanaan">
+          <h5>Suroso</h5>
+          <p>Kaur Perencanaan</p>
+        </div>
+        <div class="gov-card">
+          <img src="pemerintahan.jpg" alt="Kasi Pemerintahan">
+          <h5>Slamet Budiarto</h5>
+          <p>Kasi Pemerintahan</p>
+        </div>
+                <div class="gov-card">
+          <img src="kesejahteraan.jpg" alt="Kasi Kesejahteraan">
+          <h5>Turohman</h5>
+          <p>Kasi Kesejahteraan</p>
+        </div>
+        
+        <div class="gov-card">
+          <img src="kuser.png" alt="Kepala Desa Watumalang">
+          <h5>Agus Setiawan</h5>
+          <p>Kepala Desa Watumalang</p>
+        </div>
+
+        <div class="gov-card">
+          <img src="wuser.png" alt="Kepala Dusun Tripis">
+  <h5>Sutarman</h5>
+  <p>Kepala Dusun Tripis</p>
+</div>
+
+<div class="gov-card">
+  <img src="kuser.png" alt="Kaur Keuangan">
+  <h5>Jumad</h5>
+  <p>Kaur Keuangan</p>
+</div>
+        </div>
+      </div>
+    </div>
+  </div>
+</section>
+
+<!-- =========================
+     STATISTIK
+========================= -->
+<section id="statistik">
+  <div class="container">
+    <h2 class="section-title" data-aos="fade-down">Statistik Penduduk </h2>
+    <p class="section-subtitle text-center mb-5" data-aos="fade-up">Data demografi terkini Desa Watumalang</p>
+    
+    <div class="row g-4 mb-5">
+      <div class="col-lg-3 col-md-6" data-aos="zoom-in" data-aos-delay="100">
+        <div class="stat-card">
+          <h3>2,297</h3>
+          <p><i class="bi bi-people-fill me-2"></i>Total Penduduk</p>
+        </div>
+      </div>
+      <div class="col-lg-3 col-md-6" data-aos="zoom-in" data-aos-delay="200">
+        <div class="stat-card">
+          <h3>1,187</h3>
+          <p><i class="bi bi-gender-male me-2"></i>Laki-laki</p>
+        </div>
+      </div>
+      <div class="col-lg-3 col-md-6" data-aos="zoom-in" data-aos-delay="300">
+        <div class="stat-card">
+          <h3>1,110</h3>
+          <p><i class="bi bi-gender-female me-2"></i>Perempuan</p>
+        </div>
+      </div>
+      <div class="col-lg-3 col-md-6" data-aos="zoom-in" data-aos-delay="400">
+        <div class="stat-card">
+          <h3>838</h3>
+          <p><i class="bi bi-house-door me-2"></i>Kepala Keluarga</p>
+        </div>
+      </div>
+    </div>
+
+   <!-- Baris 1 -->
+<div class="row g-4 mb-4">
+  <div class="col-lg-6" data-aos="fade-right">
+    <div class="chart-card">
+      <h5 class="mb-4">
+        <i class="bi bi-mortarboard-fill me-2"></i>Data Pendidikan
+      </h5>
+      <canvas id="pendidikanChart"></canvas>
+    </div>
+  </div>
+
+  <div class="col-lg-6" data-aos="fade-left">
+    <div class="chart-card">
+      <h5 class="mb-4">
+        <i class="bi bi-calendar3 me-2"></i>Distribusi Usia
+      </h5>
+      <canvas id="usiaChart"></canvas>
+    </div>
+  </div>
+</div>
+
+<!-- Baris 2 -->
+<div class="row">
+  <div class="col-lg-8 mx-auto" data-aos="zoom-in">
+    <div class="chart-card">
+      <h5 class="mb-4 text-center">
+        <i class="bi bi-briefcase-fill me-2"></i>Data Pekerjaan
+      </h5>
+      <canvas id="pekerjaanChart"></canvas>
+    </div>
+  </div>
+</div>
+  </div>
+</section>
+
+<!-- =========================
+     UMKM
+========================= -->
+<section id="umkm" class="bg-light">
+  <div class="container">
+    <h2 class="section-title" data-aos="fade-down">Potensi UMKM Lokal</h2>
+    <p class="section-subtitle text-center mb-5" data-aos="fade-up">Usaha Mikro Kecil Menengah unggulan Desa Watumalang</p>
+    
+    <div class="umkm-card" data-aos="fade-up">
+      <img src="anyaman.png" alt="Kerajinan Bambu">
+      <div class="umkm-content">
+        <h4>Kerajinan Bambu Khas Watumalang</h4>
+        <p>Di Kecamatan Watumalang, Wonosobo, UMKM kerajinan bambu tumbuh sebagai bagian dari ekonomi kreatif dan kearifan lokal pedesaan. Potensi kerajinan bambu setempat berfokus pada pemanfaatan material alami yang melimpah, dipadukan dengan budaya masyarakat dalam mengolah bambu menjadi berbagai produk bernilai seni tinggi.</p>
+        <p class="location-tag">
+          <i class="bi bi-geo-alt-fill"></i>
+          Dusun Krajan, Desa Watumalang
+        </p>
+      </div>
+    </div>
+
+    <div class="umkm-card" data-aos="fade-up" data-aos-delay="200">
+      <img src="salak.jpeg" alt="Makanan Tradisional">
+      <div class="umkm-content">
+        <h4>Olahan Keripik Salak</h4>
+        <p>Usaha Mikro, Kecil, dan Menengah (UMKM) Kelompok Tani Bangun Suruhan di Desa Wonosroyo, Kecamatan Watumalang, Wonosobo sukses mengolah dan mengemas (packing) salak organik menjadi komoditas bernilai tinggi. Mereka memproduksi keripik salak berkualitas ekspor yang dikemas secara higienis untuk meningkatkan daya tahan dan nilai jual.</p>
+        <p class="location-tag">
+          <i class="bi bi-geo-alt-fill"></i>
+          Dusun Tengah, Desa Watumalang
+        </p>
+      </div>
+    </div>
+  </div>
+</section>
+
+<!-- =========================
+     GALERI
+========================= -->
+<section id="galeri">
+  <div class="container">
+    <h2 class="section-title" data-aos="fade-down">Galeri Desa</h2>
+    <p class="section-subtitle text-center mb-5" data-aos="fade-up">Momen-momen indah dan kegiatan masyarakat Desa Watumalang</p>
+    
+    <div class="row g-4">
+      <div class="col-lg-4 col-md-6" data-aos="zoom-in" data-aos-delay="100">
+        <div class="gallery-card">
+          <img src="merti dusun.jpeg" alt="Festival Desa">
+          <div class="gallery-content">
+            <h5>Merti Dusun</h5>
+            <p>Kegiatan budaya tahunan yang meriah melibatkan seluruh warga desa. Ada banyak cara untuk mengungkapkan rasa syukur kepada sang pencipta seperti dalam tradisi Merti Dusun. Merti Dusun (sering juga disebut bersih desa atau sedekah bumi) adalah upacara adat tradisional masyarakat Jawa yang diselenggarakan sebagai wujud rasa syukur kepada Tuhan Yang Maha Esa atas limpahan rezeki, kesuburan tanah, hasil panen yang melimpah, serta keselamatan warga.</p>
+          </div>
+        </div>
+      </div>
+      <div class="col-lg-4 col-md-6" data-aos="zoom-in" data-aos-delay="200">
+        <div class="gallery-card">
+          <img src="Senja.jpeg" alt="Wisata Alam">
+          <div class="gallery-content">
+            <h5>Keindahan senja di Desa Watumalang, pesona alam yang menenangkan hati</h5>
+            <p>Keindahan senja di Desa Watumalang menghadirkan suasana yang tenang dan menyejukkan. Siluet bangunan masjid yang berpadu dengan langit jingga keunguan menjadi gambaran harmonis keasrian desa serta ketentraman masyarakat menjelang malam.</p>
+          </div>
+        </div>
+      </div>
+      <div class="col-lg-4 col-md-6" data-aos="zoom-in" data-aos-delay="300">
+        <div class="gallery-card">
+          <img src="Gotong Royong.jpeg" alt="Gotong Royong">
+          <div class="gallery-content">
+            <h5>Gotong Royong Warga</h5>
+            <p>Kegiatan gotong royong warga membersihkan material longsor yang menutup akses jalan desa. Dengan bekerja sama menggunakan alat sederhana, warga memindahkan tanah dan bebatuan agar jalan kembali aman dan dapat dilalui. Kegiatan ini menunjukkan semangat kebersamaan, kepedulian, dan solidaritas masyarakat dalam menghadapi bencana.</p>
+          </div>
+        </div>
+      </div>
+    </div>
+  </div>
+</section>
+
+<!-- =========================
+     PETA DESA
+========================= -->
+<section id="peta" class="bg-light">
+  <div class="container">
+    <h2 class="section-title" data-aos="fade-down">Lokasi Desa Watumalang</h2>
+    <p class="section-subtitle text-center mb-5" data-aos="fade-up">Temukan letak geografis Desa Watumalang di Kabupaten Wonosobo</p>
+    
+    <div class="map-card" data-aos="zoom-in">
+      <iframe 
+        src="https://www.google.com/maps/embed?pb=!1m18!1m12!1m3!1d63318.45696801767!2d109.844872!3d-7.308478!2m3!1f0!2f0!3f0!3m2!1i1024!2i768!4f13.1!3m3!1m2!1s0x2e7009f2ff6bf52b%3A0x4027a76e352e9f0!2sKec.%20Watumalang%2C%20Kabupaten%20Wonosobo%2C%20Jawa%20Tengah!5e0!3m2!1sid!2sid!4v1779540305171!5m2!1sid!2sid" width="600" height="450" style="border:0;" allowfullscreen="" loading="lazy" referrerpolicy="no-referrer-when-downgrade" 
+        width="100%" 
+        height="500" 
+        style="border:0;" 
+        allowfullscreen="" 
+        loading="lazy">
+      </iframe>
+    </div>
+  </div>
+</section>
+
+<!-- =========================
+     KONTAK & PENGADUAN
+========================= -->
+<section id="kontak">
+  <div class="container">
+    <h2 class="section-title" data-aos="fade-down">Kontak & Pengaduan</h2>
+    <p class="section-subtitle text-center mb-5" data-aos="fade-up">Hubungi kami untuk informasi lebih lanjut atau sampaikan pengaduan Anda</p>
+    
+    <div class="row g-5">
+      <div class="col-lg-6" data-aos="fade-right">
+        <div class="contact-info h-100">
+          <h5 class="mb-4"><i class="bi bi-info-circle-fill me-3 text-primary"></i>Informasi Desa</h5>
+          <div class="mb-4">
+            <p class="mb-3">
+              <i class="bi bi-geo-alt-fill me-3 text-primary"></i>
+              <strong>Alamat Kantor:</strong><br>
+              Jl. Watumalang Km.01, Desa Watumalang<br>
+              Kec. Watumalang, Kab. Wonosobo 56352
+            </p>
+            <p class="mb-3">
+              <i class="bi bi-telephone-fill me-3 text-success"></i>
+              <strong>Telepon:</strong><br>
+              <a href="tel:+6285870865030" class="text-decoration-none">0858 7086 5030</a>
+            </p>
+            <p class="mb-4">
+              <i class="bi bi-envelope-fill me-3 text-warning"></i>
+              <strong>Email:</strong><br>
+              <a href="mailto:iwam.sutrisno84.watumalang@desa.mail.go.id" class="text-decoration-none">
+                iwam.sutrisno84.watumalang@desa.mail.go.id
+              </a>
+            </p>
+            <div class="d-flex gap-3">
+              <a href="#" class="btn btn-outline-primary btn-sm"><i class="bi bi-whatsapp"></i> WhatsApp</a>
+              <a href="#" class="btn btn-outline-success btn-sm"><i class="bi bi-facebook"></i> Facebook</a>
+            </div>
+          </div>
+        </div>
+      </div>
+      
+      <div class="col-lg-6" data-aos="fade-left">
+        <div class="form-card h-100">
+          <h5 class="mb-4"><i class="bi bi-chat-square-dots me-3 text-primary"></i>Form Pengaduan & Saran</h5>
+          <form id="contactForm">
+            <div class="mb-4">
+              <input type="text" class="form-control" placeholder="Nama Lengkap *" required>
+            </div>
+            <div class="mb-4">
+              <input type="email" class="form-control" placeholder="Email / No. WhatsApp *" required>
+            </div>
+            <div class="mb-4">
+              <textarea class="form-control" rows="6" placeholder="Tuliskan pesan, pengaduan, atau saran Anda..." required></textarea>
+            </div>
+            <button type="submit" class="btn btn-primary">
+              <i class="bi bi-send-fill me-2"></i>Kirim Pesan
+            </button>
+          </form>
+        </div>
+      </div>
+    </div>
+  </div>
+</section>
+
+<!-- =========================
+     FOOTER
+========================= -->
+<footer>
+  <div class="container">
+    <div class="footer-content">
+      <div>
+        <div class="footer-logo">
+          <img src="https://cdn-icons-png.flaticon.com/512/684/684908.png" alt="Logo">
+          <div>
+            <h5 class="mb-1">Desa Watumalang</h5>
+            <p class="mb-0 small opacity-75">Kec. Watumalang, Kab. Wonosobo</p>
+          </div>
+        </div>
+        <p class="opacity-75 mb-0">Website resmi desa untuk pelayanan publik yang lebih baik.</p>
+      </div>
+      
+      <div>
+        <h6 class="footer-title">Quick Links</h6>
+        <a href="#profil" class="footer-link"><i class="bi bi-chevron-right me-2"></i>Profil Desa</a>
+        <a href="#struktur" class="footer-link"><i class="bi bi-chevron-right me-2"></i>Pemerintahan</a>
+        <a href="#statistik" class="footer-link"><i class="bi bi-chevron-right me-2"></i>Statistik</a>
+        <a href="#kontak" class="footer-link"><i class="bi bi-chevron-right me-2"></i>Pengaduan</a>
+      </div>
+      
+      <div>
+        <h6 class="footer-title">Layanan</h6>
+        <a href="#" class="footer-link"><i class="bi bi-chevron-right me-2"></i>Surat Keterangan</a>
+        <a href="#" class="footer-link"><i class="bi bi-chevron-right me-2"></i>Informasi Publik</a>
+        <a href="#" class="footer-link"><i class="bi bi-chevron-right me-2"></i>Program Desa</a>
+        <a href="#" class="footer-link"><i class="bi bi-chevron-right me-2"></i>Agenda Kegiatan</a>
+      </div>
+      
+      <div>
+        <h6 class="footer-title">Kontak</h6>
+        <div class="mb-3">
+          <i class="bi bi-telephone-fill me-2 text-success"></i>
+          0858 7086 5030
+        </div>
+        <div class="mb-3">
+          <i class="bi bi-envelope-fill me-2 text-warning"></i>
+          desa.watumalang@gmail.com
+        </div>
+        <div>
+          <i class="bi bi-clock-fill me-2 text-info"></i>
+          Senin - Sabtu: 08.00 - 16.00 WIB
+        </div>
+      </div>
+    </div>
+    
+    <div class="footer-bottom">
+      <p>&copy;  Website Desa Watumalang. Dibuat dengan ❤️ untuk warga desa.</p>
+    </div>
+  </div>
+</footer>
+
+<!-- Scripts -->
+<script src="https://cdn.jsdelivr.net/npm/bootstrap@5.3.3/dist/js/bootstrap.bundle.min.js"></script>
+<script src="https://unpkg.com/aos@2.3.1/dist/aos.js"></script>
 <script>
-const elements = document.querySelectorAll('.hidden');
-window.addEventListener('scroll', () => {
-    elements.forEach(el => {
-        const position = el.getBoundingClientRect().top;
-        const screen = window.innerHeight;
-        if(position < screen - 100){
-            el.classList.add('show');
+  // Loading Screen
+  window.addEventListener('load', function() {
+    const loading = document.getElementById('loading');
+    setTimeout(() => {
+      loading.classList.add('hidden');
+    }, 1500);
+  });
+
+  // AOS Animation
+  AOS.init({
+    duration: 1000,
+    once: true,
+    offset: 100
+  });
+
+  // Charts
+  const pendidikanCtx = document.getElementById('pendidikanChart').getContext('2d');
+  new Chart(pendidikanCtx, {
+    type: 'bar',
+    data: {
+      labels: ['Tamat SD Sederajat', 'SLTP/Sederajat', 'SLTA', 'Perguruan Tinggi'],
+      datasets: [{
+        label: 'Jumlah Penduduk',
+        data: [1798, 369, 217, 54],
+        backgroundColor: 'rgba(106, 17, 203, 0.8)',
+        borderColor: '#6a11cb',
+        borderWidth: 2,
+        borderRadius: 15,
+        borderSkipped: false,
+      }]
+    },
+    options: {
+      responsive: true,
+      plugins: {
+        legend: { display: false }
+      },
+      scales: {
+        y: {
+          beginAtZero: true,
+          grid: { color: 'rgba(0,0,0,0.05)' }
+        },
+        x: {
+          grid: { display: false }
         }
-    });
+      }
+    }
+  });
+
+  const usiaCtx = document.getElementById('usiaChart').getContext('2d');
+  new Chart(usiaCtx, {
+    type: 'doughnut',
+    data: {
+      labels: ['0-19 Tahun', '20-39 Tahun', '40-59 Tahun', '60+ Tahun'],
+      datasets: [{
+        data: [690, 771, 737, 465],
+        backgroundColor: [
+          '#6a11cb',
+          '#2575fc', 
+          '#ff4d6d',
+          '#8338ec'
+        ],
+        borderWidth: 0,
+        borderRadius: 12
+      }]
+    },
+    options: {
+      responsive: true,
+      plugins: {
+        legend: {
+          position: 'bottom',
+          labels: { padding: 25, usePointStyle: true }
+        }
+      }
+    }
+  });
+// Chart Pekerjaan
+const pekerjaanCtx = document.getElementById('pekerjaanChart').getContext('2d');
+new Chart(pekerjaanCtx, {
+  type: 'pie',
+  data: {
+    labels: [
+      'Petani',
+      'Pedagang',
+      'Perangkat Desa',
+      'PNS-Pensiunan PNI',
+      'Lainnya'
+    ],
+    datasets: [{
+      data: [844, 53, 7, 7, 1743],
+      backgroundColor: [
+        '#6a11cb',
+        '#2575fc',
+        '#ff4d6d',
+        '#00c896',
+        '#f59e0b'
+      ],
+      borderWidth: 0
+    }]
+  },
+  options: {
+    responsive: true,
+    plugins: {
+      legend: {
+        position: 'bottom',
+        labels: {
+          padding: 20,
+          usePointStyle: true
+        }
+      }
+    }
+  }
 });
+  // Contact Form
+  document.getElementById("contactForm").addEventListener("submit", function(e) {
+    e.preventDefault();
+    
+    const btn = this.querySelector('button[type="submit"]');
+    const originalText = btn.innerHTML;
+    
+    btn.innerHTML = '<i class="bi bi-hourglass-split me-2"></i>Mengirim...';
+    btn.disabled = true;
+    
+    setTimeout(() => {
+      btn.innerHTML = '<i class="bi bi-check-circle-fill me-2 text-success"></i>Pesan Terkirim!';
+      setTimeout(() => {
+        this.reset();
+        btn.innerHTML = originalText;
+        btn.disabled = false;
+        alert('✅ Terima kasih! Pesan Anda berhasil dikirim. Kami akan segera merespon.');
+      }, 2000);
+    }, 2000);
+  });
+
+  // Smooth scrolling for nav links
+  document.querySelectorAll('a[href^="#"]').forEach(anchor => {
+    anchor.addEventListener('click', function (e) {
+      e.preventDefault();
+      const target = document.querySelector(this.getAttribute('href'));
+      if (target) {
+        target.scrollIntoView({
+          behavior: 'smooth',
+          block: 'start'
+        });
+      }
+    });
+  });
+
+  // Navbar scroll effect
+  window.addEventListener('scroll', () => {
+    const topbar = document.querySelector('.topbar');
+    if (window.scrollY > 100) {
+      topbar.style.background = 'rgba(255, 255, 255, 0.98)';
+      topbar.style.boxShadow = '0 12px 45px rgba(0, 0, 0, 0.18)';
+    } else {
+      topbar.style.background = 'rgba(255, 255, 255, 0.95)';
+      topbar.style.boxShadow = '0 8px 32px rgba(0, 0, 0, 0.1)';
+    }
+  });
+
+  // Search functionality (demo)
+  document.getElementById('searchInput').addEventListener('input', function() {
+    console.log('Searching for:', this.value);
+  });
 </script>
 
 </body>
